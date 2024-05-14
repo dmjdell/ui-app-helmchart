@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ui-app
-          image: asia-southeast1-docker.pkg.dev/rapid-strength-422813-t9/dbs-ui-web-app/ui-app:1.0.5
+          image: asia-southeast1-docker.pkg.dev/rapid-strength-422813-t9/dbs-ui-web-app/ui-app:1.0.4
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
