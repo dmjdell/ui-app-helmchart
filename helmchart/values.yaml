@@ -7,7 +7,7 @@ image:
   pullSecrets:
     - name: gcp-service-account
 
-namespace: dbs-ui-app
+namespace: default
 
 service:
   type: LoadBalancer
