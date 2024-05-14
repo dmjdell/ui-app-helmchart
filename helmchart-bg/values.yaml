@@ -2,7 +2,7 @@ replicaCount: 3
 
 image:
   repository: asia-southeast1-docker.pkg.dev/rapid-strength-422813-t9/dbs-ui-web-app/ui-app
-  tag: 1.0.4
+  tag: v0.2.0
   pullPolicy: IfNotPresent
   pullSecrets:
     - name: gcp-service-account
