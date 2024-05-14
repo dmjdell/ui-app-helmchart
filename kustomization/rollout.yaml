@@ -1,0 +1,36 @@
+kind: Rollout
+metadata:
+  name: dbs-ui-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dbs-ui-app
+  template:
+    metadata:
+      labels:
+        app: dbs-ui-app
+    spec:
+      containers:
+      - name: dbs-ui-app
+        image: ghcr.io/gbaeke/super:1.0.2
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
+        env:
+          - name: WELCOME
+            valueFrom:
+              configMapKeyRef:
+                name: dbs-ui-app-config
+                key: WELCOME
+        ports:
+        - containerPort: 8080
+  strategy:
+    blueGreen:
+      activeService: dbs-ui-app-svc-active
+      previewService: dbs-ui-app-svc-preview
+      autoPromotionEnabled: false

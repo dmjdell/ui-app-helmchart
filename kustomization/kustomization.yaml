@@ -1,0 +1,26 @@
+kind: Kustomization
+namespace: blue-green
+ 
+nameSuffix: -geba
+namePrefix: dev-
+ 
+commonLabels:
+  app: dbs-ui-app
+  version: v1
+  env: dev
+ 
+ 
+configurations:
+  - https://argoproj.github.io/argo-rollouts/features/kustomize/rollout-transform.yaml
+ 
+resources:
+  - namespace.yaml
+  - rollout.yaml
+  - service-active.yaml
+  - service-preview.yaml
+ 
+configMapGenerator:
+- name: dbs-ui-app-config
+  literals:
+    - WELCOME=Hello from v1!
+    - PORT=8080   

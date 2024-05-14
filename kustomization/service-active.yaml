@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  dbs-ui-app-svc-active
+spec:
+  selector:
+    app:  dbs-ui-app
+  type:  ClusterIP
+  ports:
+  - name:  http
+    port:  80
+    targetPort:  5000
