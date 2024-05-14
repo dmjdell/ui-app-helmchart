@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: ui-blue-green-rollout
-  namespace: blue-green # Adjust if your app is in a different namespace
+  namespace: dbs-ui-app # Adjust if your app is in a different namespace
 spec:
   replicas: 3  # Adjust the number of replicas you need
   selector:

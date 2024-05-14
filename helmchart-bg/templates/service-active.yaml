@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ui-app-active
-  namespace: blue-green
+  namespace: dbs-ui-app
   labels:
     rollout.argoproj.io/revision: "active"  
 spec:
