@@ -6,8 +6,7 @@ image:
   pullPolicy: IfNotPresent
   pullSecrets:
     - name: gcp-service-account
-
-namespace: blue-green
+namespace: dbs-ui-app
 
 service:
   name: ui-app
