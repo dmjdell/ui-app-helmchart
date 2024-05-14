@@ -27,9 +27,5 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
-          - name: MY_POD_NAME
-            valueFrom:
-              fieldRef:
-                fieldPath: spec.nodeName
       imagePullSecrets:
       {{- toYaml .Values.image.pullSecrets | nindent 8 }}

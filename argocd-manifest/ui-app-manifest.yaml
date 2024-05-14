@@ -1,0 +1,13 @@
+project: dbs-ui-app
+source:
+  repoURL: 'https://github.com/dmjdell/ui-app-helmchart.git'
+  path: helmchart
+  targetRevision: main
+  helm:
+    valueFiles:
+      - values.yaml
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: dbs-ui-app
+syncPolicy:
+  automated: {}
