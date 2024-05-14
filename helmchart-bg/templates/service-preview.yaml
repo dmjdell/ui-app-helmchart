@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-app-preview
+  namespace: blue-green
+  labels:
+    rollout.argoproj.io/revision: "preview"
+spec:
+  selector:
+    app: ui-app   
+  ports:
+    - name: http
+      port: 80  # Consider using a different port if you need to access both services directly
+      targetPort: 5000
+      protocol: TCP
