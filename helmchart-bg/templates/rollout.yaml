@@ -37,4 +37,4 @@ spec:
     blueGreen:
       activeService: ui-app-active 
       previewService: ui-app-preview
-      autoPromotionEnabled: false  # Disable automatic promotion
+      autoPromotionEnabled: True  # Disable automatic promotion
