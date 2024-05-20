@@ -20,7 +20,9 @@ spec:
             - name: MY_POD_NAME
               valueFrom:
                 fieldRef:
-                  fieldPath: metadata.name
+                  fieldPath: metadata.name 
+            - name: ENV_NAME
+              value: "Blue"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
