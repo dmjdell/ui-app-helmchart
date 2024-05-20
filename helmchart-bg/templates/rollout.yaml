@@ -16,6 +16,11 @@ spec:
       containers:
         - name: ui-app
           image: us-central1-docker.pkg.dev/rapid-strength-422813-t9/ui-web-app/web-app:v1.1.0
+          env:
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
