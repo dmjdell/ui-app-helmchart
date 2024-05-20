@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ui-app
-          image: us-central1-docker.pkg.dev/rapid-strength-422813-t9/ui-web-app/web-app:latest
+          image: us-central1-docker.pkg.dev/rapid-strength-422813-t9/ui-web-app/web-app:1.1.1
           env:
             - name: MY_POD_NAME
               valueFrom:
