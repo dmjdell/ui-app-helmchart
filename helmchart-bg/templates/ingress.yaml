@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ui-app-ingress
+  namespace: ui-app
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "34.49.63.43" # Replace with your static IP name
+    #networking.gke.io/managed-certificates: "YOUR_SSL_CERTIFICATE_NAME" # Replace with your certificate name
+
+spec:
+  defaultBackend: # This is the initial backend when no rule matches
+    service:
+      name: ui-app-active # Initially, traffic goes to the active service
+      port:
+        number: 80
