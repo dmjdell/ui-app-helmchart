@@ -1,7 +1,7 @@
 replicaCount: 3
 
 image:
-  repository: asia-southeast1-docker.pkg.dev/rapid-strength-422813-t9/dbs-ui-web-app/ui-app
+  repository: us-central1-docker.pkg.dev/rapid-strength-422813-t9/ui-web-app/ui-app
   tag: v0.2.0
   pullPolicy: IfNotPresent
   pullSecrets:
@@ -9,8 +9,10 @@ image:
 
 namespace: default
 
+ingress:
+  enabled: true
 service:
-  type: LoadBalancer
+  type: ClusterIp
   port: 5000
 
 resources:

@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: ui-blue-green-rollout
-  namespace: dbs-ui-app # Adjust if your app is in a different namespace
+  namespace: ui-app # Adjust if your app is in a different namespace
 spec:
   replicas: 3  # Adjust the number of replicas you need
   selector:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ui-app
-          image: asia-southeast1-docker.pkg.dev/rapid-strength-422813-t9/dbs-ui-web-app/ui-app:1.0.6
+          image: us-central1-docker.pkg.dev/rapid-strength-422813-t9/ui-web-app/ui-app:1.0.6
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
