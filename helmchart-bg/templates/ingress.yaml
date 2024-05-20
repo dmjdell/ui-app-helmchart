@@ -1,16 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ui-app-ingress
-  namespace: ui-app
+  name: my-app-ingress
   annotations:
     kubernetes.io/ingress.class: "gce"
-    kubernetes.io/ingress.global-static-ip-name: "34.49.63.43" # Replace with your static IP name
-    #networking.gke.io/managed-certificates: "YOUR_SSL_CERTIFICATE_NAME" # Replace with your certificate name
-
+    kubernetes.io/ingress.global-static-ip-name: "34.49.63.43"
+    #networking.gke.io/managed-certificates: "my-app-cert" # If using HTTPS
 spec:
-  defaultBackend: # This is the initial backend when no rule matches
+  defaultBackend:
     service:
-      name: ui-app-active # Initially, traffic goes to the active service
+      name: ui-app-active
       port:
-        number: 80
+        number: 80 # The port your ClusterIP Servic
